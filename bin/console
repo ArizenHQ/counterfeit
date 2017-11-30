@@ -9,6 +9,7 @@ require "counterfeit"
 # (If you use this, don't forget to add pry to your Gemfile!)
 # require "pry"
 # Pry.start
+Counterfeit.run
 
 require "irb"
 IRB.start(__FILE__)

@@ -4,12 +4,10 @@ require 'sinatra/json'
 
 module Counterfeit
   module Nexmo
+    EndPoint = 'api.nexmo.com'
+
     class App < Sinatra::Base
       register Sinatra::Contrib
-
-      configure do
-        set :threaded, false
-      end
 
       get '/' do
         json({nexmo: 'ok'})

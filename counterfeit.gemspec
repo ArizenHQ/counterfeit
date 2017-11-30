@@ -27,17 +27,15 @@ Gem::Specification.new do |spec|
   end
 
   spec.bindir        = 'bin'
-  spec.executables   = ['counterfeit']
   spec.require_paths = ['lib']
 
   spec.add_dependency 'sinatra'
   spec.add_dependency 'sinatra-contrib'
   spec.add_dependency 'haml'
-  spec.add_dependency 'thin'
-  spec.add_dependency 'eventmachine'
+  spec.add_dependency 'webmock'
 
-  spec.add_development_dependency "bundler", "~> 1.15"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "byebug"
+  spec.add_development_dependency 'bundler'  ,'~> 1.15'
+  spec.add_development_dependency 'rake'     ,'~> 10.0'
+  spec.add_development_dependency 'rspec'    ,'~> 3.0'
+  spec.add_development_dependency 'byebug'
 end
