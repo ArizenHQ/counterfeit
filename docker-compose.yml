@@ -16,7 +16,6 @@ services:
     hostname: picobox
     ports:
     - 4567:4567
-    - 3000:3000
   bundle:
     image: busybox
     volumes:
