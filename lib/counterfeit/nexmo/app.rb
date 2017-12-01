@@ -9,9 +9,6 @@ module Counterfeit
     class App < Sinatra::Base
       register Sinatra::Contrib
 
-      before do
-
-      end
 
       post '/verify/json' do
         response = if params[:number].blank?
