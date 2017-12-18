@@ -3,6 +3,9 @@ require 'active_support'
 require 'active_support/core_ext'
 require 'counterfeit/version'
 require 'counterfeit/nexmo/app'
+require 'counterfeit/kraken/app'
+require 'counterfeit/be2bill/app'
+require 'counterfeit/blockchain/app'
 
 module Counterfeit
   include WebMock::API
@@ -10,7 +13,10 @@ module Counterfeit
   module_function
   def plugins
     [
-      Counterfeit::Nexmo
+      Counterfeit::Nexmo,
+      Counterfeit::Kraken,
+      Counterfeit::Be2Bill,
+      Counterfeit::Blockchain
     ]
   end
 
@@ -29,4 +35,3 @@ module Counterfeit
     WebMock.reset!
   end
 end
-
