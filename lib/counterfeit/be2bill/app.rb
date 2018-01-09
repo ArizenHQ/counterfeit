@@ -9,14 +9,15 @@ module Counterfeit
     class App < Sinatra::Base
       register Sinatra::Contrib
 
-
       post '/front/service/rest/process.php' do
-        response = if params[:AMOUNT] < 10000
-          { 'EXECCODE' => '5004' }
-        elsif params[:AMOUNT].between?(10000, 20000)
-          { 'EXECCODE' => '5002' }
+        response = if params[:params][:TRANSACTIONID] == 'B37352344'
+          { 'OPERATIONTYPE' => 'capture', 'EXECCODE' => '5004' }
+        elsif params[:params][:TRANSACTIONID] == 'B37352345'
+          { 'OPERATIONTYPE' => 'capture', 'EXECCODE' => '5002' }
+        elsif params[:params][:TRANSACTIONID] == 'B37352343'
+          { 'OPERATIONTYPE' => 'capture', 'EXECCODE' => '5001' }
         else
-          { 'EXECCODE' => '0000' }
+          { 'OPERATIONTYPE' => 'capture', 'EXECCODE' => '0000' }
         end
 
         json(response)
