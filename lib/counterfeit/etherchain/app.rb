@@ -4,7 +4,7 @@ require 'sinatra/json'
 
 module Counterfeit
   module Etherchain
-    EndPoint = 'www.etherchain.org'
+    ENDPOINT = 'www.etherchain.org'
 
     class App < Sinatra::Base
       register Sinatra::Contrib

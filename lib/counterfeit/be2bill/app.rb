@@ -4,7 +4,7 @@ require 'sinatra/json'
 
 module Counterfeit
   module Be2Bill
-    EndPoint = 'secure-test.be2bill.com'
+    ENDPOINT = 'secure-test.be2bill.com'
 
     class App < Sinatra::Base
       register Sinatra::Contrib

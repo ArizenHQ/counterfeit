@@ -4,7 +4,7 @@ require 'sinatra/json'
 
 module Counterfeit
   module Blockchain
-    EndPoint = 'blockchain.info'
+    ENDPOINT = 'blockchain.info'
 
     class App < Sinatra::Base
       register Sinatra::Contrib

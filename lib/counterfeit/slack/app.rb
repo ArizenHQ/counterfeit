@@ -4,7 +4,7 @@ require 'sinatra/json'
 
 module Counterfeit
   module Slack
-    EndPoint = 'hooks.slack.com'
+    ENDPOINT = 'hooks.slack.com'
 
     class App < Sinatra::Base
       register Sinatra::Contrib

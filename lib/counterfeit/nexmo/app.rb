@@ -4,7 +4,7 @@ require 'sinatra/json'
 
 module Counterfeit
   module Nexmo
-    EndPoint = 'api.nexmo.com'
+    ENDPOINT = 'api.nexmo.com'
 
     class App < Sinatra::Base
       register Sinatra::Contrib

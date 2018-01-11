@@ -27,12 +27,12 @@ module Counterfeit
   end
 
 
-  def enable!
+  def enable!(plugins=self.plugins)
     WebMock.enable!
     WebMock.allow_net_connect!
 
     plugins.each do |plugin|
-      WebMock.stub_request(:any, /#{plugin::EndPoint}/).to_rack(plugin::App)
+      WebMock.stub_request(:any, /#{plugin::ENDPOINT}/).to_rack(plugin::App)
     end
   end
 

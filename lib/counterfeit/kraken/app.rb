@@ -4,7 +4,7 @@ require 'sinatra/json'
 
 module Counterfeit
   module Kraken
-    EndPoint = 'api.kraken.com'
+    ENDPOINT = 'api.kraken.com'
 
     class App < Sinatra::Base
       register Sinatra::Contrib

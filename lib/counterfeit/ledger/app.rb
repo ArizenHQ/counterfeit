@@ -4,7 +4,7 @@ require 'sinatra/json'
 
 module Counterfeit
   module Ledger
-    EndPoint = 'api.ledgerwallet.com'
+    ENDPOINT = 'api.ledgerwallet.com'
 
     class App < Sinatra::Base
       register Sinatra::Contrib
