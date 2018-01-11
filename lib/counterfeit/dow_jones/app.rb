@@ -30,7 +30,7 @@ module Counterfeit
               body: {}
             }
           end
-        response.to_xml(root: 'search-results')
+        response.to_xml(root: 'search-results').squish.tr('\n ', '')
       end
     end
   end
