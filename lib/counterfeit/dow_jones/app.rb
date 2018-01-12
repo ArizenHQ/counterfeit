@@ -10,10 +10,10 @@ module Counterfeit
       register Sinatra::Contrib
 
       get '/v1/search/name' do
-        response =
-          if params[:name] == 'Donald TRUMP'
-            {
-              body: {
+        if params[:name] == 'Donald TRUMP'
+          {
+            body: {
+              match: {
                 peid: '1143233',
                 match_type: 'PRECISE',
                 score: '1.0',
@@ -25,12 +25,12 @@ module Counterfeit
                 }
               }
             }
-          else
-            {
-              body: {}
-            }
-          end
-        response.to_xml(root: 'search-results').squish.tr('\n ', '')
+          }.to_xml(root: 'search-results')
+        else
+          {
+            body: {}
+          }.to_xml(root: 'search-results').squish.tr('\n ', '')
+        end
       end
     end
   end
