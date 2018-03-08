@@ -47,7 +47,6 @@ module Counterfeit
     WebMock.reset!
   end
 
-  private
 
   def webpack_dev_server?
     defined?(Webpacker) && Webpacker.dev_server.running?
