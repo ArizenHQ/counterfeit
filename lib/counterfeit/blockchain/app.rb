@@ -62,6 +62,10 @@ module Counterfeit
           '{"ver"=>1, "inputs"=>[{"sequence"=>4294967295, "witness"=>"", "prev_out"=>{"spent"=>true, "tx_index"=>241112679, "type"=>0, "addr"=>"123aBD6AkRMh9FiwQPgG1nsMeJLFVpWKwV", "value"=>1625561173, "n"=>1, "script"=>"76a9140b74a6d21f99bcd2ae5bf2327fa1f1faa1a3a3d588ac"}, "script"=>"483045022100968fb9c8e60c52becc1d6453e77637172626d4cb1a8034493edf3c92f15fe93a02205d00874b3f4e4a8ecc73d199e1aacdad78220cc869c98e62b45247bab1890352012102186a40100380429187f00fda54b62be6fbb1813ea2ff335f3603a69fbdee5637"}], "weight"=>896, "block_height"=>461767, "relayed_by"=>"127.0.0.1", "out"=>[{"spent"=>true, "tx_index"=>241111683, "type"=>0, "addr"=>"3GqZLZCjp6czv2PUCw6UXXqu4FjAtKtqHy", "value"=>1695000, "n"=>0, "script"=>"a914a6277002b96f196fbe298f02e5cefccc2426acc387"}, {"spent"=>true, "tx_index"=>241111683, "type"=>0, "addr"=>"1MThtbADxpGDADuh6hrXiD6WCtdHLQkgvN", "value"=>1623792509, "n"=>1, "script"=>"76a914e06f76a72a32dd51c64eeded38789ea1222645e288ac"}], "lock_time"=>0, "size"=>224, "double_spend"=>false, "time"=>1492123316, "tx_index"=>241111683, "vin_sz"=>1, "hash"=>"59e5cd400decf3f7e566818c36948fc3d9eafd18f34c6cfdd57a8b4288b63800", "vout_sz"=>2}'
         end
       end
+
+      get '/merchant/:guid/accounts/:account/receiveAddress' do
+        json(address: '1LMLpNm19HoJgUM1MfZy6okEUHhAyuu4Zr')
+      end
     end
   end
 end

@@ -62,6 +62,10 @@ module Counterfeit
       post '/wallet/:currency/send' do
         json(txid: SecureRandom.hex)
       end
+
+      get '/wallet/btc/new_address' do
+        json(address: '1LMLpNm19HoJgUM1MfZy6okEUHhAyuu4Zr')
+      end
     end
   end
 end

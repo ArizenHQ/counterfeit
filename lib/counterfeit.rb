@@ -10,6 +10,7 @@ require 'counterfeit/kraken/app'
 require 'counterfeit/ledger/app'
 require 'counterfeit/nexmo/app'
 require 'counterfeit/slack/app'
+require 'counterfeit/coinhouse/app'
 
 module Counterfeit
   include WebMock::API
@@ -24,7 +25,8 @@ module Counterfeit
       Counterfeit::Kraken,
       Counterfeit::Ledger,
       Counterfeit::Nexmo,
-      Counterfeit::Slack
+      Counterfeit::Slack,
+      Counterfeit::Coinhouse
     ]
   end
 
