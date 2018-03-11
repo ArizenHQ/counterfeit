@@ -21,6 +21,21 @@ module Counterfeit
         "{ 'result': '0x#{address}' }".to_json
       end
 
+      get '/v1/wallets/btc/balance' do
+        json(result: '10')
+      end
+
+      get '/v1/wallets/eth/balance' do
+        json(result: '100')
+      end
+
+      post '/v1/wallets/:currency/pay' do
+        if params[:amount] < 0.75
+          json(status: 'OK', result: SecureRandom.hex)
+        else
+          json(status: 'KO', message: 'Some error')
+        end
+      end
     end
   end
 end

@@ -247,7 +247,7 @@ module Counterfeit
       end
 
       get '/0/private/Balance' do
-        json(balances: {"XXBT" => 100, "XETH" => 100, "ZEUR" => 100_000})
+        json(balances: {"XXBT" => 10, "XETH" => 100, "ZEUR" => 100_000})
       end
     end
   end
