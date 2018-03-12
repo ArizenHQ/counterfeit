@@ -245,6 +245,10 @@ module Counterfeit
           }'
         end
       end
+
+      post '/0/private/Balance' do
+        json(result: {"XXBT" => 10, "XETH" => 100, "ZEUR" => 100_000})
+      end
     end
   end
 end

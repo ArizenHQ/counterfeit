@@ -10,6 +10,8 @@ require 'counterfeit/kraken/app'
 require 'counterfeit/ledger/app'
 require 'counterfeit/nexmo/app'
 require 'counterfeit/slack/app'
+require 'counterfeit/bittrex/app'
+require 'counterfeit/mbtc/app'
 
 module Counterfeit
   include WebMock::API
@@ -24,7 +26,9 @@ module Counterfeit
       Counterfeit::Kraken,
       Counterfeit::Ledger,
       Counterfeit::Nexmo,
-      Counterfeit::Slack
+      Counterfeit::Slack,
+      Counterfeit::MBTC,
+      Counterfeit::Bittrex
     ]
   end
 
@@ -32,7 +36,7 @@ module Counterfeit
   def enable!(plugins=self.plugins)
     WebMock.allow_net_connect!
     WebMock.enable!
-    
+
     # https://github.com/ncr/rack-proxy#warning
     patch_streaming_response if webpack_dev_server?
 
@@ -60,9 +64,9 @@ module Counterfeit
       ensure
         session.end_request_hacked unless mocking?
       end
-      
+
       protected
-      
+
       def response
         if mocking? # don't use hacked net_http
           @response ||= session.request(@request)
@@ -70,7 +74,7 @@ module Counterfeit
           super
         end
       end
-      
+
       def mocking?
         defined?(WebMock) || defined?(FakeWeb)
       end
