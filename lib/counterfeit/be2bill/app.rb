@@ -39,6 +39,8 @@ module Counterfeit
       def handle_authorization
         if params[:params][:AMOUNT].to_f == 100_00
           { 'OPERATIONTYPE' => 'authorization', 'EXECCODE' => '5001', 'MESSAGE' => 'Exchange protocol failure.' }
+        elsif params[:params][:AMOUNT].to_f == 200_00
+          { 'OPERATIONTYPE' => 'authorization', 'EXECCODE' => '0001', 'MESSAGE' => '3D secure authentication required.', 'TRANSACTIONID' => 'B11499473', 'REDIRECTHTML' => 'PGh0bWw+CiAgICA8aGVhZD4K', '3DSECUREHTML' => 'PGh0bWw+CiAgICA8aGVhZD4KICAgICAgICA' }
         else
           { 'OPERATIONTYPE' => 'authorization', 'EXECCODE' => '0000', 'MESSAGE' => 'Operation succeeded.', 'TRANSACTIONID' => 'B11499474' }
         end
