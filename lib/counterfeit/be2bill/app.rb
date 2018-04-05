@@ -9,7 +9,7 @@ module Counterfeit
     class App < Sinatra::Base
       register Sinatra::Contrib
 
-      post %r{/front/service/rest/process} do
+      post %r{/front/service/rest/process(.php)?} do
         response =
           if params[:method] == 'capture'
             handle_capture
