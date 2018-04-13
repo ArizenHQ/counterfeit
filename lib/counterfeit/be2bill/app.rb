@@ -13,6 +13,8 @@ module Counterfeit
         response =
           if params[:method] == 'capture'
             handle_capture
+          elsif params[:method] == 'void'
+            handle_void
           elsif params[:method] == 'authorization' && params[:params][:CREATEALIAS].present?
             handle_card_storage
           else
@@ -101,6 +103,14 @@ module Counterfeit
           { 'OPERATIONTYPE' => 'authorization', 'EXECCODE' => '5001', 'MESSAGE' => 'Exchange protocol failure.' }
         else
           { 'OPERATIONTYPE' => 'authorization', 'EXECCODE' => '0000', 'MESSAGE' => 'Operation succeeded.', 'TRANSACTIONID' => 'B11499475', 'DESCRIPTOR' => 'RENTABILITEST', 'ALIAS' => 'A1-1d252795-1084-4bb5-8260-766bc76d2f6b' }
+        end
+      end
+
+      def handle_void
+        if params[:params][:TRANSACTIONID] == 'B22499473'
+          { 'OPERATIONTYPE' => 'void', 'EXECCODE' => '5001' }
+        else
+          { 'OPERATIONTYPE' => 'void', 'EXECCODE' => '0000' }
         end
       end
     end
