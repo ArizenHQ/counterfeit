@@ -17,9 +17,10 @@ module Counterfeit
 
       post '/v1/order/new' do
         response =
-          if params[:amount] == 50
-            { status: 400, message: 'Invalid order: not enough tradable balance.' }
-          elsif params[:side] == 'sell'
+          if payload['amount'] == '50'
+            status 400
+            { message: 'Invalid order: not enough tradable balance.' }
+          elsif payload['side'] == 'sell'
             new_order_response('sell')
           else
             new_order_response
@@ -30,8 +31,9 @@ module Counterfeit
 
       post '/v1/order/cancel' do
         response =
-          if params[:order_id] == '448364249'
-            { status: 400, message: 'Order could not be cancelled.' }
+          if payload['order_id'] == 448364249
+            status 400
+            { message: 'Order could not be cancelled.' }
           else
             cancel_order_response
           end
@@ -41,8 +43,9 @@ module Counterfeit
 
       post '/v1/order/status' do
         response =
-          if params[:order_id] == '448411153'
-            { status: 400, message: 'No such order found.' }
+          if payload['order_id'] == 448411153
+            status 400
+            { message: 'No such order found.' }
           else
             order_status_response
           end
@@ -126,6 +129,10 @@ module Counterfeit
           'remaining_amount' => '0.01',
           'executed_amount' => '0.0'
         }
+      end
+
+      def payload
+        JSON.parse(Base64.decode64(@env['HTTP_X_BFX_PAYLOAD']))
       end
     end
   end
