@@ -30,6 +30,14 @@ module Counterfeit
               "CryptoAddress" : "1Mrcdr6715hjda34pdXuLqXcju6qgwHA31",
               "Requested" : false,
               "Uuid" : null
+            }, {
+              "Currency" : "XRP",
+              "Balance" : 0.00000000,
+              "Available" : 0.00000000,
+              "Pending" : 0.00000000,
+              "CryptoAddress" : "rPVMhWBsfF9iMXYj3aAzJVkPDTFNSyWdKy",
+              "Requested" : false,
+              "Uuid" : null
             }
           ]
         }'
