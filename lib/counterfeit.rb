@@ -13,6 +13,7 @@ require 'counterfeit/ledger/app'
 require 'counterfeit/mbtc/app'
 require 'counterfeit/nexmo/app'
 require 'counterfeit/slack/app'
+require 'counterfeit/ripple/app'
 
 module Counterfeit
   include WebMock::API
@@ -30,7 +31,8 @@ module Counterfeit
       Counterfeit::Ledger,
       Counterfeit::MBTC,
       Counterfeit::Nexmo,
-      Counterfeit::Slack
+      Counterfeit::Slack,
+      Counterfeit::Ripple
     ]
   end
 
