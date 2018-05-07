@@ -53,6 +53,36 @@ module Counterfeit
         json(response)
       end
 
+      get '/v1/pubticker/btcusd' do
+        response = btc_usd_pair
+
+        json(response)
+      end
+
+      get '/v1/pubticker/btceur' do
+        response = btc_eur_pair
+
+        json(response)
+      end
+
+      get '/v1/pubticker/ethusd' do
+        response = eth_usd_pair
+
+        json(response)
+      end
+
+      get '/v1/pubticker/etheur' do
+        response = eth_eur_pair
+
+        json(response)
+      end
+
+      get '/v1/pubticker/aaabbb' do
+        response = invalid_pair
+
+        json(response)
+      end
+
       private
 
       def wallet_ballances
@@ -128,6 +158,64 @@ module Counterfeit
           'original_amount' => '0.01',
           'remaining_amount' => '0.01',
           'executed_amount' => '0.0'
+        }
+      end
+
+      def btc_usd_pair
+        {
+          'mid' => '9360.05',
+          'bid' => '9360.0',
+          'ask' => '9360.1',
+          'last_price' => '9360.0',
+          'low' => '9259.4',
+          'high' => '9725.0',
+          'volume' => '26444.135191689995',
+          'timestamp' => '1525678028.914629'
+        }
+      end
+
+      def btc_eur_pair
+        {
+          'mid' => '7844.6',
+          'bid' => '7844.5',
+          'ask' => '7844.7',
+          'last_price' => '7843.9174424',
+          'low' => '7730.5',
+          'high' => '8126.385696',
+          'volume' => '1791.72801759',
+          'timestamp' => '1525678038.911444'
+        }
+      end
+
+      def eth_usd_pair
+        {
+          'mid' => '744.325',
+          'bid' => '744.27',
+          'ask' => '744.38',
+          'last_price' => '744.24',
+          'low' => '741.0',
+          'high' => '800.85',
+          'volume' => '237367.73164226004',
+          'timestamp' => '1525678537.5447907'
+        }
+      end
+
+      def eth_eur_pair
+        {
+          'mid' => '620.525',
+          'bid' => '620.29',
+          'ask' => '620.76',
+          'last_price' => '620.863122',
+          'low' => '620.0',
+          'high' => '670.97',
+          'volume' => '5306.78267907',
+          'timestamp' => '1525678608.786321'
+        }
+      end
+
+      def invalid_pair
+        {
+          'message' => 'Unknown symbol'
         }
       end
 
