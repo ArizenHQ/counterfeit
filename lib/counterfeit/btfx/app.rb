@@ -17,7 +17,7 @@ module Counterfeit
 
       post '/v1/order/new' do
         response =
-          if payload['amount'] == '50'
+          if payload['amount'] == '50.0'
             status 400
             { message: 'Invalid order: not enough tradable balance.' }
           elsif payload['side'] == 'sell'
