@@ -86,7 +86,7 @@ module Counterfeit
 
       post '/0/private/AddOrder' do
         volume = params[:volume].to_f
-        multiplier = params[:pair] == 'XXBTZEUR' ? 1000 : 1
+        multiplier = params[:pair] == 'XXRPZEUR' ? 1000 : 1
 
         response = if volume < 0.1 * multiplier
           '{"error":["EOrder:Insufficient funds"]}'
