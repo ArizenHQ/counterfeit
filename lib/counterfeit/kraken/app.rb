@@ -86,14 +86,15 @@ module Counterfeit
 
       post '/0/private/AddOrder' do
         volume = params[:volume].to_f
+        multiplier = params[:pair] == 'XXRPZEUR' ? 1000 : 1
 
-        response = if volume < 0.1
+        response = if volume < 0.1 * multiplier
           '{"error":["EOrder:Insufficient funds"]}'
-        elsif volume < 0.2
+        elsif volume < 0.2 * multiplier
           '{"error":["EAPI:Invalid nonce"]}'
-        elsif volume < 0.3
+        elsif volume < 0.3 * multiplier
           '{"error":["EService:Unavailable"]}'
-        elsif volume < 0.4
+        elsif volume < 0.4 * multiplier
           '{
             "error": [],
             "result": {
@@ -103,7 +104,7 @@ module Counterfeit
               "txid":["OEYVCO-D32UE-WAKU7Z"]
             }
           }'
-        elsif volume < 0.5
+        elsif volume < 0.5 * multiplier
           '{
             "error": [],
             "result": {
@@ -113,7 +114,7 @@ module Counterfeit
               "txid":["OEYVCO-D32UE-WAKU7Y"]
             }
           }'
-        elsif volume > 1.0
+        elsif volume > 1.0 * multiplier
           '{
             "error": [],
             "result": {
