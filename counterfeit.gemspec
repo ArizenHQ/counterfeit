@@ -29,8 +29,8 @@ Gem::Specification.new do |spec|
   spec.bindir        = 'bin'
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'sinatra'
-  spec.add_dependency 'sinatra-contrib'
+  spec.add_dependency 'sinatra'          ,'= 2.0.1'
+  spec.add_dependency 'sinatra-contrib'  ,'= 2.0.1'
   spec.add_dependency 'haml'
   spec.add_dependency 'webmock'
   spec.add_dependency 'activesupport'

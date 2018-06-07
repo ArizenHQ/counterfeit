@@ -1,25 +1,25 @@
 PATH
   remote: .
   specs:
-    counterfeit (0.1.5)
+    counterfeit (0.1.15)
       activesupport
       haml
-      sinatra
-      sinatra-contrib
+      sinatra (= 2.0.1)
+      sinatra-contrib (= 2.0.1)
       webmock
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.1.5)
+    activesupport (5.2.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (~> 0.7)
+      i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    backports (3.11.1)
-    byebug (9.1.0)
+    backports (3.11.3)
+    byebug (10.0.2)
     concurrent-ruby (1.0.5)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
@@ -28,13 +28,13 @@ GEM
       temple (>= 0.8.0)
       tilt
     hashdiff (0.3.7)
-    i18n (0.9.5)
+    i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
     multi_json (1.13.1)
     mustermann (1.0.2)
     public_suffix (3.0.2)
-    rack (2.0.4)
+    rack (2.0.5)
     rack-protection (2.0.1)
       rack
     rake (10.5.0)
@@ -42,7 +42,7 @@ GEM
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
       rspec-mocks (~> 3.7.0)
-    rspec-core (3.7.0)
+    rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
@@ -50,7 +50,7 @@ GEM
     rspec-mocks (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
-    rspec-support (3.7.0)
+    rspec-support (3.7.1)
     safe_yaml (1.0.4)
     sinatra (2.0.1)
       mustermann (~> 1.0)
@@ -69,7 +69,7 @@ GEM
     tilt (2.0.8)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    webmock (3.3.0)
+    webmock (3.4.2)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
