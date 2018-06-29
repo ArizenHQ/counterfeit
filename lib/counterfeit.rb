@@ -5,10 +5,8 @@ require 'counterfeit/version'
 require 'counterfeit/be2bill/app'
 require 'counterfeit/bittrex/app'
 require 'counterfeit/blockchain/app'
-require 'counterfeit/btfx/app'
 require 'counterfeit/dow_jones/app'
 require 'counterfeit/etherchain/app'
-require 'counterfeit/kraken/app'
 require 'counterfeit/ledger/app'
 require 'counterfeit/mbtc/app'
 require 'counterfeit/nexmo/app'
@@ -24,10 +22,8 @@ module Counterfeit
       Counterfeit::Be2Bill,
       Counterfeit::Bittrex,
       Counterfeit::Blockchain,
-      Counterfeit::Btfx, #Bitfinex
       Counterfeit::DowJones,
       Counterfeit::Etherchain,
-      Counterfeit::Kraken,
       Counterfeit::Ledger,
       Counterfeit::MBTC,
       Counterfeit::Nexmo,
