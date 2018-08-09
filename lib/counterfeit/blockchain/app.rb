@@ -38,7 +38,7 @@ module Counterfeit
 
       post '/merchant/:guid/payment' do
         amount = params[:amount].to_f
-        response = if amount >= 0.5 * 10**8 && amount < 0.6 * 10**8
+        response = if amount > 0.75 * 10**8
           status 500
           '{"error":"Error signing and pushing transaction"}'
         else
