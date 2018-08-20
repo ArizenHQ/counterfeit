@@ -60,7 +60,7 @@ module Counterfeit
       end
 
       post '/wallet/:currency/send' do
-        params[:amount].to_f == 50 ? json(error: 'Some error') : json(txid: SecureRandom.hex)
+        params[:amount].to_f == 1.1 ? json(error: 'Some error') : json(txid: SecureRandom.hex)
       end
 
       get '/wallet/btc/new_address' do
