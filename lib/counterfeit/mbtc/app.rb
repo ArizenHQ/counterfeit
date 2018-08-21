@@ -30,7 +30,7 @@ module Counterfeit
       end
 
       post '/v1/wallets/:currency/pay' do
-        if params[:amount].to_f == 50
+        if params[:amount].to_f.round(1) == 1.1
           json(status: 'KO', message: 'Some error')
         else
           json(status: 'OK', result: SecureRandom.hex)

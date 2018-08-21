@@ -38,7 +38,7 @@ module Counterfeit
 
       post '/merchant/:guid/payment' do
         amount = params[:amount].to_f
-        response = if amount == 50
+        if (amount / 10**8).round(1) == 1.1
           status 500
           '{"error":"Error signing and pushing transaction"}'
         else
