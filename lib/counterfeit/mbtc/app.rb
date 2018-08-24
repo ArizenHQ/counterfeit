@@ -29,8 +29,9 @@ module Counterfeit
         json(result: '100')
       end
 
-      post '/v1/wallets/:currency/pay' do
-        if params[:amount].to_f.round(1) == 1.1
+      post '/v1/wallets/:currency/pay' do |currency|
+        multiplier = currency == 'btc' ? 1 : 10
+        if params[:amount].to_f.round(2) == 0.11 * multiplier
           json(status: 'KO', message: 'Some error')
         else
           json(status: 'OK', result: SecureRandom.hex)

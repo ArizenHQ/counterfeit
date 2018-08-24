@@ -59,8 +59,9 @@ module Counterfeit
         json(balance: 100)
       end
 
-      post '/wallet/:currency/send' do
-        params[:amount].to_f.round(1) == 1.1 ? json(error: 'Some error') : json(txid: SecureRandom.hex)
+      post '/wallet/:currency/send' do |currency|
+        multiplier = currency == 'btc' ? 1 : 10
+        params[:amount].to_f.round(2) == 0.11 * multiplier ? json(error: 'Some error') : json(txid: SecureRandom.hex)
       end
 
       get '/wallet/btc/new_address' do
