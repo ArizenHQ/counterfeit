@@ -18,7 +18,7 @@ module Counterfeit
       get "/v1/wallets/eth/receive_address" do
         address = Digest::SHA1.hexdigest(SecureRandom.hex)
 
-        "{ 'result': '0x#{address}' }".to_json
+        json(result: "0x#{address}")
       end
 
       get '/v1/wallets/btc/balance' do
