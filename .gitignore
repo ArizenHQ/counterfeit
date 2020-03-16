@@ -50,5 +50,6 @@ build-iPhoneSimulator/
 .rvmrc
 .DS_Store
 /tmp
-/log
+log
+!log/.keep
 .byebug_history

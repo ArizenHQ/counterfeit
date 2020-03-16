@@ -20,9 +20,15 @@ Or install it yourself as:
 
     $ gem install counterfeit
 
-## Usage
+## Run Servers locally
 
-TODO: Write usage instructions here
+```
+docker-compose up
+docker-compose exec dev bundle
+docker-compose exec dev bin/server
+```
+
+Each counterfeit app directory will be mounted at a path of the app name. So `Counterfeit::Nexmo::App` is mounted on `/nexmo`. See `config.ru` for more details. You can visit each endpoint at `localhost:4567/app_dir/some/url/`
 
 ## Development
 

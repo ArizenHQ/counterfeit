@@ -1,3 +1,4 @@
+require 'counterfeit/base_app'
 require 'sinatra/base'
 require 'sinatra/contrib'
 require 'sinatra/json'
@@ -6,7 +7,7 @@ module Counterfeit
   module Ripple
     ENDPOINT = 'data.ripple.com'
 
-    class App < Sinatra::Base
+    class App < Counterfeit::BaseApp
       register Sinatra::Contrib
 
       get '/v2/transactions/:hash' do

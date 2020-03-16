@@ -8,7 +8,6 @@ require 'counterfeit/blockchain/app'
 require 'counterfeit/dow_jones/app'
 require 'counterfeit/etherchain/app'
 require 'counterfeit/ledger/app'
-require 'counterfeit/mbtc/app'
 require 'counterfeit/nexmo/app'
 require 'counterfeit/slack/app'
 require 'counterfeit/ripple/app'
@@ -25,7 +24,6 @@ module Counterfeit
       Counterfeit::DowJones,
       Counterfeit::Etherchain,
       Counterfeit::Ledger,
-      Counterfeit::MBTC,
       Counterfeit::Nexmo,
       Counterfeit::Slack,
       Counterfeit::Ripple

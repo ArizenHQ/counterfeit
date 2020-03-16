@@ -1,3 +1,4 @@
+require 'counterfeit/base_app'
 require 'sinatra/base'
 require 'sinatra/contrib'
 require 'sinatra/json'
@@ -6,7 +7,7 @@ module Counterfeit
   module Be2Bill
     ENDPOINT = 'secure-test.be2bill.com'
 
-    class App < Sinatra::Base
+    class App < Counterfeit::BaseApp
       register Sinatra::Contrib
 
       post %r{/front/service/rest/process(.php)?} do
