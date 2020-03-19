@@ -5,5 +5,3 @@ module Counterfeit
     end
   end
 end
-
-require 'counterfeit/railtie' if defined?(Rails)
