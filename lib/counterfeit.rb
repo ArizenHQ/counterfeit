@@ -31,7 +31,7 @@ module Counterfeit
   end
 
   def self.logger
-    @logger ||= Logger.new('/var/www/log/counterfeit')
+    @logger ||= Logger.new(File.join(File.expand_path(__dir__), '../log/counterfeit'))
   end
 
   def self.logger=(logger)
