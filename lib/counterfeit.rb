@@ -30,6 +30,13 @@ module Counterfeit
     ]
   end
 
+  def self.logger
+    @logger ||= Logger.new('/var/www/log/counterfeit')
+  end
+
+  def self.logger=(logger)
+    @logger = logger
+  end
 
   def enable!(plugins=self.plugins)
     WebMock.allow_net_connect!
@@ -43,12 +50,10 @@ module Counterfeit
     end
   end
 
-
   def disable!
     WebMock.disable!
     WebMock.reset!
   end
-
 
   def webpack_dev_server?
     defined?(Webpacker) && Webpacker.dev_server.running?

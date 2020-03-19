@@ -1,8 +1,9 @@
 $LOAD_PATH << File.expand_path('lib', __dir__)
 
 require 'sinatra/base'
-require 'logger'
+require 'byebug'
 
+require 'counterfeit'
 require 'counterfeit/bittrex/app'
 require 'counterfeit/blockchain/app'
 require 'counterfeit/dow_jones/app'
@@ -19,7 +20,7 @@ run Rack::URLMap.new(
   '/dow_jones'  => Counterfeit::DowJones::App.new,
   '/ledger'     => Counterfeit::Ledger::App.new,
   '/etherchain' => Counterfeit::Etherchain::App.new,
-  '/info'       => Counterfeit::Info::App.new,
+  '/'           => Counterfeit::Info::App.new,
   '/nexmo'      => Counterfeit::Nexmo::App.new,
   '/ripple'     => Counterfeit::Ripple::App.new,
   '/slack'      => Counterfeit::Slack::App.new
