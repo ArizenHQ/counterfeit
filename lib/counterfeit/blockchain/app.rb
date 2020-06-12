@@ -9,6 +9,10 @@ module Counterfeit
     class App < Sinatra::Base
       register Sinatra::Contrib
 
+      get '/fr/q/getblockcount' do
+        '600000'
+      end
+
       get '/ticker' do
         '{
           "USD" : {"15m" : 16170.64, "last" : 16170.64, "buy" : 16175.47, "sell" : 16165.81, "symbol" : "$"},
