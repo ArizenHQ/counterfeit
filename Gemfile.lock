@@ -34,7 +34,7 @@ GEM
     multi_json (1.13.1)
     mustermann (1.0.2)
     public_suffix (3.0.2)
-    rack (2.0.5)
+    rack (2.2.3)
     rack-protection (2.0.3)
       rack
     rake (10.5.0)
