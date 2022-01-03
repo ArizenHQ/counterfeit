@@ -1,35 +1,13 @@
 require 'webmock'
 require 'active_support'
 require 'active_support/core_ext'
-require 'counterfeit/version'
-require 'counterfeit/be2bill/app'
-require 'counterfeit/bittrex/app'
-require 'counterfeit/blockchain/app'
-require 'counterfeit/dow_jones/app'
-require 'counterfeit/etherchain/app'
-require 'counterfeit/ledger/app'
-require 'counterfeit/mbtc/app'
-require 'counterfeit/nexmo/app'
-require 'counterfeit/slack/app'
-require 'counterfeit/ripple/app'
 
 module Counterfeit
   include WebMock::API
 
   module_function
   def plugins
-    [
-      Counterfeit::Be2Bill,
-      Counterfeit::Bittrex,
-      Counterfeit::Blockchain,
-      Counterfeit::DowJones,
-      Counterfeit::Etherchain,
-      Counterfeit::Ledger,
-      Counterfeit::MBTC,
-      Counterfeit::Nexmo,
-      Counterfeit::Slack,
-      Counterfeit::Ripple
-    ]
+    []
   end
 
 
