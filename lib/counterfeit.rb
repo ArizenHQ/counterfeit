@@ -1,13 +1,15 @@
 require 'webmock'
 require 'active_support'
 require 'active_support/core_ext'
+require 'counterfeit/version'
+require 'counterfeit/info/app'
 
 module Counterfeit
   include WebMock::API
 
   module_function
   def plugins
-    []
+    [Counterfeit::Info]
   end
 
 
