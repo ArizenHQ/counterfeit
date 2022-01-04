@@ -1,6 +1,6 @@
 # Counterfeit
 
-Simple tool based on [Webmock](https://github.com/bblimke/webmock) and [Sinatra](https://github.com/sinatra/sinatra) to quickly mock API endpoints
+Simple tool based on [Webmock](https://github.com/bblimke/webmock) and [Sinatra](https://github.com/sinatra/sinatra) to quickly stub API endpoints
 
 ## Installation
 
