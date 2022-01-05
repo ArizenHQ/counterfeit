@@ -3,14 +3,14 @@ require 'sinatra/contrib'
 require 'sinatra/json'
 
 module Counterfeit
-  module Slack
-    ENDPOINT = 'hooks.slack.com'
+  module Example
+    ENDPOINT = 'www.example.com'
 
     class App < Sinatra::Base
       register Sinatra::Contrib
 
-      post '/services/:some/:postfix' do
-        json({})
+      get '/test' do
+        json({ result: 'ok' })
       end
     end
   end

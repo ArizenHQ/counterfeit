@@ -1,8 +1,6 @@
 # Counterfeit
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/counterfeit`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Simple tool based on [Webmock](https://github.com/bblimke/webmock) and [Sinatra](https://github.com/sinatra/sinatra) to quickly stub API endpoints
 
 ## Installation
 
@@ -22,7 +20,24 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+**NOTE:**
+Take a look at `lib/example/app.rb` to get an example implementation
+
+1. Load your plugin file(s):
+
+```ruby
+require "counterfeit/example/app"
+require "counterfeit/third_party_api/app"
+```
+
+2. And then initialize them with Counterfeit:
+```ruby
+Counterfeit.enable!([
+    Counterfeit::Example,
+    Counterfeit::ThirdPartyRestAPI,
+    ...
+])
+```
 
 ## Development
 
