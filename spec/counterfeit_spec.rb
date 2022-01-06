@@ -7,8 +7,9 @@ RSpec.describe Counterfeit do
   let(:response) { Net::HTTP.get("www.example.com", "/test") }
 
   before do
-    Counterfeit.enable!([
-      Counterfeit::Example
+    Counterfeit.enable!(
+      Counterfeit.plugins + [
+      Counterfeit::Example,
     ])
   end
 

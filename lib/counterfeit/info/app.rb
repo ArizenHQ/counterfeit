@@ -3,9 +3,8 @@ require 'haml'
 
 module Counterfeit
   module Info
+    ENDPOINT = '0.0.0.0:4567'.freeze
     class App < Sinatra::Base
-      set :bind, '0.0.0.0'
-      set :port, '4567'
 
       get '/' do
         @var = 'yup'
