@@ -4,7 +4,7 @@ require 'sinatra/json'
 
 module Counterfeit
   module Example
-    ENDPOINT = 'www.example.com'
+    ENDPOINT = 'www.example.com'.freeze
 
     class App < Sinatra::Base
       register Sinatra::Contrib
