@@ -7,6 +7,10 @@ Simple tool based on [Webmock](https://github.com/bblimke/webmock) and [Sinatra]
 Add this line to your application's Gemfile:
 
 ```ruby
+# Latest version (usually)
+gem 'counterfeit', git: 'https://github.com/ArizenHQ/counterfeit.git'
+
+# Specific version
 gem 'counterfeit', git: 'https://github.com/ArizenHQ/counterfeit.git', tag: 'v0.1.13'
 ```
 
