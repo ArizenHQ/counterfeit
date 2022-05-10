@@ -7,14 +7,12 @@
 # FROM ruby:2.3-slim
 
 FROM ruby:slim-stretch
-MAINTAINER Stefan Surzycki <stefan.surzycki@gmail.com>
 
 ENV APP_HOME /var/www
 ENV PATH $APP_HOME/bin:$PATH
 
 # silence deb warnings
 ENV DEBIAN_FRONTEND noninteractive
-ENV HOSTNAME picobox
 
 # do install here
 RUN mkdir -p /tmp
@@ -31,7 +29,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -y nodejs
 
 # utils
-RUN apt-get install -y nano git
+RUN apt-get install -y vim nano git
 
 # make nano work
 RUN echo "export TERM=xterm" >> /etc/bash.bashrc
