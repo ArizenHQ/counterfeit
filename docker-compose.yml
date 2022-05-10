@@ -1,5 +1,5 @@
 ---
-version: '2'
+version: '3'
 volumes:
   db-data:
     external: false
@@ -8,15 +8,10 @@ volumes:
 services:
   dev:
     build: "."
-    entrypoint: ".picobox/start"
+    container_name: counterfeit_dev
+    command: 'tail -f /dev/null'
     volumes:
-    - ".:/var/www:cached"
-    volumes_from:
-    - bundle
-    hostname: picobox
+      - bundle-data:/usr/local/bundle:cached
+      - .:/var/www:cached
     ports:
-    - 4567:4567
-  bundle:
-    image: busybox
-    volumes:
-    - bundle-data:/usr/local/bundle:cached
+      - 4567:4567
