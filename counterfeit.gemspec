@@ -29,7 +29,7 @@ Gem::Specification.new do |spec|
   spec.bindir        = 'bin'
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'sinatra'          ,'~> 2.2'
+  spec.add_dependency 'sinatra'          ,'>= 2.2', '< 4.0'
   spec.add_dependency 'sinatra-contrib'  ,'~> 2.2'
   spec.add_dependency 'haml'
   spec.add_dependency 'webmock'
