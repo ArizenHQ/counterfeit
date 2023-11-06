@@ -1,4 +1,4 @@
 example_id                      | status | run_time        |
 ------------------------------- | ------ | --------------- |
-./spec/counterfeit_spec.rb[1:1] | passed | 0.00067 seconds |
-./spec/counterfeit_spec.rb[1:2] | passed | 0.00991 seconds |
+./spec/counterfeit_spec.rb[1:1] | passed | 0.00044 seconds |
+./spec/counterfeit_spec.rb[1:2] | passed | 0.0078 seconds  |

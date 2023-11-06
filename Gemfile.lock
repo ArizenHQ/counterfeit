@@ -4,8 +4,8 @@ PATH
     counterfeit (0.1.13)
       activesupport
       haml
-      sinatra (~> 2.2)
-      sinatra-contrib (~> 2.2)
+      sinatra (~> 3.1)
+      sinatra-contrib (~> 3.1)
       webmock
 
 GEM
@@ -32,12 +32,12 @@ GEM
       concurrent-ruby (~> 1.0)
     minitest (5.15.0)
     multi_json (1.15.0)
-    mustermann (1.1.1)
+    mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     public_suffix (4.0.7)
-    rack (2.2.3)
-    rack-protection (2.2.0)
-      rack
+    rack (2.2.8)
+    rack-protection (3.1.0)
+      rack (~> 2.2, >= 2.2.4)
     rake (13.0.6)
     rexml (3.2.5)
     rspec (3.7.0)
@@ -54,19 +54,19 @@ GEM
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
     ruby2_keywords (0.0.5)
-    sinatra (2.2.0)
-      mustermann (~> 1.0)
-      rack (~> 2.2)
-      rack-protection (= 2.2.0)
+    sinatra (3.1.0)
+      mustermann (~> 3.0)
+      rack (~> 2.2, >= 2.2.4)
+      rack-protection (= 3.1.0)
       tilt (~> 2.0)
-    sinatra-contrib (2.2.0)
+    sinatra-contrib (3.1.0)
       multi_json
-      mustermann (~> 1.0)
-      rack-protection (= 2.2.0)
-      sinatra (= 2.2.0)
+      mustermann (~> 3.0)
+      rack-protection (= 3.1.0)
+      sinatra (= 3.1.0)
       tilt (~> 2.0)
     temple (0.8.2)
-    tilt (2.0.10)
+    tilt (2.3.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     webmock (3.14.0)
@@ -79,11 +79,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.15)
+  bundler
   byebug
   counterfeit!
-  rake (~> 13.0)
-  rspec (~> 3.0)
+  rake
+  rspec
 
 BUNDLED WITH
-   1.17.3
+   2.4.21
