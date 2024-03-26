@@ -29,14 +29,14 @@ Gem::Specification.new do |spec|
   spec.bindir        = 'bin'
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'sinatra'          ,'~> 2.2'
-  spec.add_dependency 'sinatra-contrib'  ,'~> 2.2'
+  spec.add_dependency 'sinatra'          ,'~> 3.1'
+  spec.add_dependency 'sinatra-contrib'  ,'~> 3.1'
   spec.add_dependency 'haml'
   spec.add_dependency 'webmock'
   spec.add_dependency 'activesupport'
 
-  spec.add_development_dependency 'bundler'  ,'~> 1.15'
-  spec.add_development_dependency 'rake'     ,'~> 13.0'
-  spec.add_development_dependency 'rspec'    ,'~> 3.0'
+  spec.add_development_dependency 'bundler'
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'byebug'
 end
