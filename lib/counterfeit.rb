@@ -12,25 +12,27 @@ module Counterfeit
     [Counterfeit::Info]
   end
 
-
-  def enable!(plugins=self.plugins)
-    WebMock.allow_net_connect!
+  # Enable Webmock and stub provided plugins.
+  def enable!(plugins = self.plugins)
     WebMock.enable!
+
+    stub_plugins(plugins)
 
     # https://github.com/ncr/rack-proxy#warning
     patch_streaming_response if webpack_dev_server?
+  end
 
+  # Only stub provided plugins (when WebMock is setup outside Counterfeit for example).
+  def stub_plugins(plugins)
     plugins.each do |plugin|
       WebMock.stub_request(:any, /#{plugin::ENDPOINT}/).to_rack(plugin::App)
     end
   end
 
-
   def disable!
     WebMock.disable!
     WebMock.reset!
   end
-
 
   def webpack_dev_server?
     defined?(Webpacker) && Webpacker.dev_server.running?
