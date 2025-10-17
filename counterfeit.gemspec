@@ -29,8 +29,10 @@ Gem::Specification.new do |spec|
   spec.bindir        = 'bin'
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'sinatra'          ,'~> 3.1'
-  spec.add_dependency 'sinatra-contrib'  ,'~> 3.1'
+  spec.required_ruby_version = '>= 2.7.8'
+
+  spec.add_dependency 'sinatra'          ,'~> 4.2'
+  spec.add_dependency 'sinatra-contrib'  ,'~> 4.2'
   spec.add_dependency 'haml'
   spec.add_dependency 'webmock'
   spec.add_dependency 'activesupport'
