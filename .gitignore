@@ -52,3 +52,4 @@ build-iPhoneSimulator/
 /tmp
 /log
 .byebug_history
+Gemfile.lock
