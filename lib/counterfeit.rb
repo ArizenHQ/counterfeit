@@ -25,7 +25,12 @@ module Counterfeit
   # Only stub provided plugins (when WebMock is setup outside Counterfeit for example).
   def stub_plugins(plugins)
     plugins.each do |plugin|
-      WebMock.stub_request(:any, /#{plugin::ENDPOINT}/).to_rack(plugin::App)
+      endpoints = []
+      endpoints += [plugin::ENDPOINT] if defined?(plugin::ENDPOINT)
+      endpoints += plugin::ENDPOINTS if defined?(plugin::ENDPOINTS)
+      endpoints.each do |endpoint|
+        WebMock.stub_request(:any, /#{endpoint}/).to_rack(plugin::App)
+      end
     end
   end
 
