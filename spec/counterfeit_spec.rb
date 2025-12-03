@@ -22,7 +22,13 @@ RSpec.describe Counterfeit do
     let(:plugin) { Counterfeit::Example }
 
     before do
-      allow(WebMock).to receive(:stub_request).and_call_through
+      allow(WebMock).to receive(:stub_request).and_call_original
+    end
+
+    after do
+      # Reload file due to remove_const calls
+      Counterfeit.send(:remove_const, :Example)
+      load 'counterfeit/example/app.rb'
     end
 
     context "no endpoint is defined" do
@@ -34,9 +40,9 @@ RSpec.describe Counterfeit do
       it "do not stubs endpoints" do
         subject
 
-        expect(WebMock).to_not have_received(:stub_request).with(:any, /www.exemple.com/)
-        expect(WebMock).to_not have_received(:stub_request).with(:any, /www.exemple2.com/)
-        expect(WebMock).to_not have_received(:stub_request).with(:any, /www.exemple3.com/)
+        expect(WebMock).to_not have_received(:stub_request).with(:any, /www.example.com/)
+        expect(WebMock).to_not have_received(:stub_request).with(:any, /www.example2.com/)
+        expect(WebMock).to_not have_received(:stub_request).with(:any, /www.example3.com/)
       end
     end
 
@@ -48,9 +54,9 @@ RSpec.describe Counterfeit do
       it "stubs single endpoint" do
         subject
 
-        expect(WebMock).to have_received(:stub_request).with(:any, /www.exemple.com/)
-        expect(WebMock).to_not have_received(:stub_request).with(:any, /www.exemple2.com/)
-        expect(WebMock).to_not have_received(:stub_request).with(:any, /www.exemple3.com/)
+        expect(WebMock).to have_received(:stub_request).with(:any, /www.example.com/)
+        expect(WebMock).to_not have_received(:stub_request).with(:any, /www.example2.com/)
+        expect(WebMock).to_not have_received(:stub_request).with(:any, /www.example3.com/)
       end
     end
 
@@ -62,9 +68,9 @@ RSpec.describe Counterfeit do
       it "stubs several endpoints" do
         subject
 
-        expect(WebMock).to_not have_received(:stub_request).with(:any, /www.exemple.com/)
-        expect(WebMock).to have_received(:stub_request).with(:any, /www.exemple2.com/)
-        expect(WebMock).to have_received(:stub_request).with(:any, /www.exemple3.com/)
+        expect(WebMock).to_not have_received(:stub_request).with(:any, /www.example.com/)
+        expect(WebMock).to have_received(:stub_request).with(:any, /www.example2.com/)
+        expect(WebMock).to have_received(:stub_request).with(:any, /www.example3.com/)
       end
     end
 
@@ -72,9 +78,9 @@ RSpec.describe Counterfeit do
       it "stubs all endpoints" do
         subject
 
-        expect(WebMock).to have_received(:stub_request).with(:any, /www.exemple.com/)
-        expect(WebMock).to have_received(:stub_request).with(:any, /www.exemple2.com/)
-        expect(WebMock).to have_received(:stub_request).with(:any, /www.exemple3.com/)
+        expect(WebMock).to have_received(:stub_request).with(:any, /www.example.com/)
+        expect(WebMock).to have_received(:stub_request).with(:any, /www.example2.com/)
+        expect(WebMock).to have_received(:stub_request).with(:any, /www.example3.com/)
       end
     end
   end
@@ -83,7 +89,7 @@ RSpec.describe Counterfeit do
     let(:response) { Net::HTTP.get("www.example.com", "/test") }
 
     it "should return a fake response" do
-      expect(response&.body).to eql({ result: 'ok' }.to_json)
+      expect(response).to eql({ result: 'ok' }.to_json)
       expect(a_request(:get, "www.example.com/test")).to have_been_made
     end
   end
